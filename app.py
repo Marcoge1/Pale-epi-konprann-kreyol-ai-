@@ -23,9 +23,9 @@ if st.button("Voye"):
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": "gpt-5.6-luna",
-                    "instructions": "Ou se yon asistan entèlijan ki fèt pou pale epi konprann kreyòl ayisyen klèman ak respè. Si itilizatè a pale fransè oswa anglè, ou ka reponn nan lang li itilize a. Ede itilizatè a konprann mo, fraz, tradiksyon ak ekspresyon kreyòl. Ou ka pale kreyòl ayisyen.",
-                    "input": message
+                    ""model": "gpt-5.6-luna",
+"instructions": "Ou se yon asistan entèlijan ki fèt pou pale epi konprann kreyòl ayisyen klèman ak respè. Si itilizatè a pale fransè oswa anglè, ou ka reponn nan lang li itilize a. Ede itilizatè a konprann mo, fraz, tradiksyon ak ekspresyon kreyòl. Ou ka pale kreyòl ayisyen.",
+"input": message
                 },
                 timeout=60
             )
