@@ -1,5 +1,5 @@
 import streamlit as st
-from openai import OpenAI
+import requests
 
 st.set_page_config(
     page_title="Pale Epi Konprann Kreyòl AI",
@@ -9,18 +9,35 @@ st.set_page_config(
 st.title("🇭🇹 Pale Epi Konprann Kreyòl AI")
 st.write("Yon asistan entèlijan ki pale epi konprann kreyòl ayisyen.")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
-message = st.text_input("Ekri mesaj ou an an kreyòl:")
+message = st.text_input("Ekri mesaj ou an kreyòl:")
 
 if st.button("Voye"):
     if message:
-        response = client.responses.create(
-            model="gpt-5.6-luna",
-            instructions="Ou se yon asistan entèlijan ki pale epi konprann kreyòl ayisyen. Reponn natirèlman an kreyòl ayisyen, sof si itilizatè a mande yon lòt lang.",
-            input=message
-        )
+        try:
+            api_key = st.secrets["OPENAI_API_KEY"]
 
-        st.write("🤖", response.output_text)
+            response = requests.post(
+                "https://api.openai.com/v1/responses",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "gpt-5.6-luna",
+                    "instructions": "Ou se yon asistan entèlijan ki pale epi konprann kreyòl ayisyen. Reponn natirèlman an kreyòl ayisyen.",
+                    "input": message
+                },
+                timeout=60
+            )
+
+            response.raise_for_status()
+            data = response.json()
+
+            answer = data["output"][0]["content"][0]["text"]
+            st.write("🤖", answer)
+
+        except Exception as e:
+            st.error("Gen yon pwoblèm pandan koneksyon an.")
+            st.write(str(e))
     else:
         st.warning("Tanpri ekri yon mesaj.")
