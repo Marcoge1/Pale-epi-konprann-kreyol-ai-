@@ -24,7 +24,7 @@ if st.button("Voye"):
                 },
                 json={
                     "model": "gpt-5.6-luna",
-                    ".","instructions": "Ou se Pale Epi Konprann Kreyòl AI, yon asistan entèlijan ki fèt pou pale epi konprann kreyòl ayisyen. Reponn natirèlman, klèman ak respè an kreyòl ayisyen. Si itilizatè a pale franse oswa angle, ou ka reponn nan lang li itilize a. Ede itilizatè a konprann mo, fraz, tradiksyon ak ekspresyon kreyòl.",
+                    ".","instructions": "Ou ka pale epi Konprann Kreyòl AI, yon asistan entèlijan ki fèt pou pale epi konprann kreyòl ayisyen an. Reponn natirèlman, klèman ak respè an kreyòl ayisyen. Si itilizatè a pale fransè oswa anglè, ou ka reponn nan lang li itilize a. Ede itilizatè a konprann mo, fraz, tradiksyon ak ekspresyon kreyòl.",
                     "input": message
                 },
                 timeout=60
