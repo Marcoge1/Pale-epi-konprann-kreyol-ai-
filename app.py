@@ -11,11 +11,10 @@ st.write("Yon asistan entèlijan ki pale epi konprann kreyòl ayisyen.")
 
 message = st.text_input("Ekri mesaj ou an kreyòl:")
 
-if st.button("Voye"):
+if st.button("Voyel"):
     if message:
         try:
             api_key = st.secrets["OPENAI_API_KEY"]
-
             response = requests.post(
                 "https://api.openai.com/v1/responses",
                 headers={
