@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st.set_page_config(page_title="Vi'n Aprann Kreyòl Ayisyen")
 import requests
 
 st.set_page_config(
