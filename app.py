@@ -2,13 +2,7 @@ import streamlit as st
 st.set_page_config(page_title="Vi'n Aprann Kreyòl Ayisyen")
 
 import requests
-
-st.set_page_config(
-    page_title="Vi'n apran'n Kreyòl Ayisyen",
-    page_icon="🇭🇹"
-)
-
-st.title("🇭🇹 Vi'n apran'n Kreyòl Ayisyen")
+st.title("🇭🇹 Vi'n Aprann Kreyòl Ayisyen")
 st.write("Yon asistan entèlijan ki pale epi konprann kreyòl ayisyen.")
 
 message = st.text_input("Ekri mesaj ou an kreyòl:")
